@@ -1,3 +1,13 @@
+    git push --set-upstream origin useRef-example1-form-inputs
+
+     So now our inputs are going to be in charge of changing the state.
+
+      Okay, so let's see how we're doing here. We have created these state variables for sound and color. We have adjusted our submit function to just alert whatever the sound and color in state are and then reset the sound in color when the form is submitted. And then each one of these inputs have their own onChange properties that change the state. 
+
+
+
+
+
 And while this is working okay, the real benefit of having access to that previous state is so that we can use it. So if our new state relies on the old state, this is a really good pattern to use. 
 
  So the first argument is actually a function, and the second argument is the initial state. So the initial state for this number is going to be zero. The function that we're going to send as the first argument to useReducer is going to be what we want to have happen when setNumber is called.
