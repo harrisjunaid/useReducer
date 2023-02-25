@@ -20,6 +20,7 @@ export default function TaskList({tasks, handleChangeTask, handleDeleteTask}) {
 }
 /**
  * 
+ * NOTE: EVERY TASK HAS A SEPERATE STATE
  * @param {object} task - task object from tasks array
  * @param {handleChangeTask} onChange - function from parent App
  * @param {handleDeleteTask} onDelete - function from parent App
@@ -27,7 +28,9 @@ export default function TaskList({tasks, handleChangeTask, handleDeleteTask}) {
  * @description 
  * to decide task output
  * - uses useState to check for edit option
- * - taksContent: text, edit button //is linked with edit
+ * - conditional taksContent: text, edit/save button //is linked with edit state
+ *    if edit is true: taskContent is changed to input and button is "Save: -> toggle edit"
+ *    if edit is false: taskContent is text and button is "Edit: -> toggle edit"
  * - renders
  *  -- checkbox, taskContent, delete 
  *   -- taskContent: text, edit button
