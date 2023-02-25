@@ -1,6 +1,7 @@
 import {useState} from 'react';
 
 export default function TaskList({tasks, handleChangeTask, handleDeleteTask}) {
+  console.log("in TaskList:");
   return (
     <ul>
       {tasks.map((task) => (
@@ -11,7 +12,13 @@ export default function TaskList({tasks, handleChangeTask, handleDeleteTask}) {
     </ul>
   );
 }
-
+/**
+ * 
+ * @param {object} task - task object from tasks array
+ * @param {handleChangeTask} onChange - function from parent App
+ * @param {handleDeleteTask} onDelete - function from parent App
+ * @returns 
+ */
 function Task({task, onChange, onDelete}) {
   const [isEditing, setIsEditing] = useState(false);
   let taskContent;

@@ -1,6 +1,7 @@
 import {useState} from 'react';
 
 export default function AddTask({handleAddTask}) {
+  console.log("in AddTaks:");
   const [text, setText] = useState('');
   return (
     <>

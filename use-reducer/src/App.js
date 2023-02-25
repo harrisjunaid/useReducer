@@ -17,6 +17,7 @@ export default function TaskApp() {
   }
 
   function handleChangeTask(task) {
+    console.log("in handleChangeTask");
     setTasks(
       tasks.map((t) => {
         if (t.id === task.id) {
@@ -28,6 +29,10 @@ export default function TaskApp() {
     );
   }
 
+  /**
+   * @description filters other tasks to seTask setter function
+   * @param {number} taskId 
+   */
   function handleDeleteTask(taskId) {
     console.log("in handleDeleteTask");
     setTasks(tasks.filter((t) => t.id !== taskId));
@@ -38,7 +43,7 @@ export default function TaskApp() {
      * 
      */
   }
-  useEffect(()=>{console.log(tasks)},[tasks]);
+  useEffect(()=>{console.log("in useEffect:");console.log(tasks);},[tasks]);
 
   return (
     <>
@@ -58,5 +63,4 @@ const initialTasks = [
   {id: 1, text: 'Watch a puppet show', done: false},
   {id: 2, text: 'Lennon Wall pic', done: false},
 ];
-console.log(initialTasks);
 let nextId = initialTasks.length;
