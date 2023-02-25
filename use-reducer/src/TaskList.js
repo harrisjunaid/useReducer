@@ -1,11 +1,11 @@
 import {useState} from 'react';
 
-export default function TaskList({tasks, onChangeTask, onDeleteTask}) {
+export default function TaskList({tasks, handleChangeTask, handleDeleteTask}) {
   return (
     <ul>
       {tasks.map((task) => (
         <li key={task.id}>
-          <Task task={task} onChange={onChangeTask} onDelete={onDeleteTask} />
+          <Task task={task} onChange={handleChangeTask} onDelete={handleDeleteTask} />
         </li>
       ))}
     </ul>

@@ -35,11 +35,11 @@ export default function TaskApp() {
   return (
     <>
       <h1>Prague itinerary</h1>
-      <AddTask onAddTask={handleAddTask} />
+      <AddTask handleAddTask={handleAddTask} />
       <TaskList
         tasks={tasks}
-        onChangeTask={handleChangeTask}
-        onDeleteTask={handleDeleteTask}
+        handleChangeTask={handleChangeTask}
+        handleDeleteTask={handleDeleteTask}
       />
     </>
   );
