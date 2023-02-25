@@ -1,3 +1,16 @@
+Saturday, February 25, 2023
+4:59 AM
+
+ So the first argument is actually a function, and the second argument is the initial state. So the initial state for this number is going to be zero. The function that we're going to send as the first argument to useReducer is going to be what we want to have happen when setNumber is called.
+
+
+useReducer(
+function: that is going to return some sort of new state,
+Value: initial state
+);
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
