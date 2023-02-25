@@ -1,4 +1,4 @@
-import {useState} from 'react';
+import {useState, useEffect} from 'react';
 import AddTask from './AddTask.js';
 import TaskList from './TaskList.js';
 
@@ -29,8 +29,16 @@ export default function TaskApp() {
   }
 
   function handleDeleteTask(taskId) {
+    console.log("in handleDeleteTask");
     setTasks(tasks.filter((t) => t.id !== taskId));
+    /**
+     * below code is not giving proper output here
+     console.log("updated tasks:");
+     console.log(tasks);
+     * 
+     */
   }
+  useEffect(()=>{console.log(tasks)},[tasks]);
 
   return (
     <>
@@ -50,4 +58,5 @@ const initialTasks = [
   {id: 1, text: 'Watch a puppet show', done: false},
   {id: 2, text: 'Lennon Wall pic', done: false},
 ];
+console.log(initialTasks);
 let nextId = initialTasks.length;
