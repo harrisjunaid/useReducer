@@ -1,4 +1,4 @@
-import React, { StrictMode, useReducer } from "react";
+import React, { StrictMode, useRef } from "react";
 import { createRoot } from "react-dom/client";
 import "./styles.css";
 
@@ -20,17 +20,22 @@ function reducer(state, action) {
   }
 }
 function App() {
-  const [state, dispatch] = useReducer(
-    reducer,
-    initialState
-  );
+  const sound = useRef();
+  const color = useRef();
+  const submit = (e) => {
+    e.preventDefault();
+    const soundVal = sound.current.value;
+    const colorVal = color.current.value;
+    alert(`${soundVal} sounds like ${colorVal}`);
+    sound.current.value = "";
+    color.current.value = "";
+  }
   return (
-    <>
-      <p>Message: {state.message}</p>
-      <button onClick={() => dispatch({type: "yell"})}>YELL</button>
-      <button onClick={() => dispatch({type: "whisper"})}>whisper</button>
-
-    </>
+    <form onSubmit={submit}>
+      <input type="text" placeholder="Sound..." ref={sound}/>
+      <input type="color" ref={color}/>
+      <button>ADD</button>
+    </form>
   )
 }
 
