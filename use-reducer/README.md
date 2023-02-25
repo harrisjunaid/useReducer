@@ -1,5 +1,4 @@
-Saturday, February 25, 2023
-4:59 AM
+And while this is working okay, the real benefit of having access to that previous state is so that we can use it. So if our new state relies on the old state, this is a really good pattern to use. 
 
  So the first argument is actually a function, and the second argument is the initial state. So the initial state for this number is going to be zero. The function that we're going to send as the first argument to useReducer is going to be what we want to have happen when setNumber is called.
 
