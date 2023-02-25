@@ -1,5 +1,11 @@
 import {useState} from 'react';
-
+/**
+ * 
+ * @param {*} 
+ * @description 
+ * create a list of tasks
+ * - calls: Task //decides output
+ *  */
 export default function TaskList({tasks, handleChangeTask, handleDeleteTask}) {
   console.log("in TaskList:");
   return (
@@ -18,11 +24,19 @@ export default function TaskList({tasks, handleChangeTask, handleDeleteTask}) {
  * @param {handleChangeTask} onChange - function from parent App
  * @param {handleDeleteTask} onDelete - function from parent App
  * @returns 
+ * @description 
+ * to decide task output
+ * - uses useState to check for edit option
+ * - taksContent: text, edit button //is linked with edit
+ * - renders
+ *  -- checkbox, taskContent, delete 
+ *   -- taskContent: text, edit button
  */
 function Task({task, onChange, onDelete}) {
-  const [isEditing, setIsEditing] = useState(false);
+  const [edit, setEdit] = useState(false);
   let taskContent;
-  if (isEditing) {
+  if (edit) {
+    console.log("edit is true");
     taskContent = (
       <>
         <input
@@ -34,14 +48,15 @@ function Task({task, onChange, onDelete}) {
             });
           }}
         />
-        <button onClick={() => setIsEditing(false)}>Save</button>
+        <button onClick={() => setEdit(false)}>Save</button>
       </>
     );
   } else {
+    console.log("edit is false");
     taskContent = (
       <>
         {task.text}
-        <button onClick={() => setIsEditing(true)}>Edit</button>
+        <button onClick={() => setEdit(true)}>Edit</button>
       </>
     );
   }
